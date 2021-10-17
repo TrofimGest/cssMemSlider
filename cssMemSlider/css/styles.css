@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 50px;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(35, 34, 37);
+    font-family: 'Ubuntu', sans-serif;
+}
+.meme-slider {
+    position: relative;
+    width: 60%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-container {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+
+.text {
+    margin-top: 3rem;
+    overflow: hidden;
+    display: inline-block;
+    height: 50px;
+    width: 500px;
+}
+
+.text-container {
+    transition: all 0.15s ease;
+}
+
+.text-container p {
+    width: 500px;
+}
+
+.images img {
+    height:900px;
+    width: 100%;
+    transition: all 0.15s ease;
+    object-fit: cover;
+}
+
+input {
+    display: none;
+}
+.controls {
+    display: inline-flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+.controls label {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: solid #fff 3px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin: 5px;
+}
+.controls label:hover {background: #fff;}
+
+#input1:checked ~ .images .image-container .img1{
+    margin-left: 0;
+}
+#input2:checked ~ .images .image-container .img2
+{
+    margin-left: -100%;
+}
+#input3:checked ~ .images .image-container .img3{
+    margin-left: -200%;
+}
+#input4:checked ~ .images .image-container .img4{
+    margin-left: -300%;
+}
+
+#input1:checked ~ .nav .text .text-container {
+    transform: translateY(0px);
+}
+#input2:checked ~ .nav .text .text-container {
+    transform: translateY(-60px);
+}
+#input3:checked ~ .nav .text .text-container {
+    transform: translateY(-120px);
+}
+#input4:checked ~ .nav .text .text-container {
+    transform: translateY(-180px);
+} 
+
+@media screen and (max-width: 768px) {
+    .images img {
+        height: 400px;
+    }
+    .nav{
+        flex-direction: column-reverse;
+    }
+    .text{
+        text-align: center;
+    }
+}
