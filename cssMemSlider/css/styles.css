@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+footer{
+    background-color:rgb(35, 34, 37);
+    height: 3vw;
+}
+body {
+    font-size: 3rem;
+    color: #fff;
+    height: 100vh;
+    background-color:rgb(35, 34, 37);
+    font-family: 'Ubuntu', sans-serif;
+}
+.meme-slider {
+    margin: 0 auto;
+    position: relative;
+    width: 60%;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+.image-container {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+.text {
+    margin-top: 3rem;
+    overflow: hidden;
+    display: inline-block;
+    height: 3.5rem;
+    width: 100%;
+}
+.text-container {
+    transition: all 0.15s ease;
+}
+.text-container p {
+    width: 100%;
+}
+.images img {
+    border-radius: 1%;
+    height:56.25rem;
+    width: 100%;
+    transition: all 0.15s ease;
+    object-fit: cover;
+}
+input {
+    display: none;
+}
+.controls {
+    display: inline-flex;
+    justify-content: center;
+    margin: 3.125rem 0;
+    column-gap: 1rem;
+}
+.input-zone{
+    border-radius: 100%;
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+.input-zone label {
+    height: 1.875rem;
+    width: 1.875rem;
+    border-radius: 100%;
+    border: solid #fff 0.125rem;
+    transition: all 0.15s ease;
+    margin: 0.3125rem;
+}
+.input-zone:hover label{
+    cursor: pointer;
+    background-color: springgreen;
+}
+.input-zone label:hover{
+    border: solid seagreen 0.5rem;
+}
+#input1:checked ~ .nav .controls .label1,
+#input2:checked ~ .nav .controls .label2,
+#input3:checked ~ .nav .controls .label3,
+#input4:checked ~ .nav .controls .label4{
+    background-color: tomato;
+}
+#input1:checked ~ .images .image-container .img1{
+    margin-left: 0;
+}
+#input2:checked ~ .images .image-container .img2
+{
+    margin-left: -100%;
+}
+#input3:checked ~ .images .image-container .img3{
+    margin-left: -200%;
+}
+#input4:checked ~ .images .image-container .img4{
+    margin-left: -300%;
+}
+#input1:checked ~ .nav .text .text-container {
+    transform: translateY(0);
+}
+#input2:checked ~ .nav .text .text-container {
+    transform: translateY(-3.5rem);
+}
+#input3:checked ~ .nav .text .text-container {
+    transform: translateY(-7rem);
+}
+#input4:checked ~ .nav .text .text-container {
+    transform: translateY(-10.5rem);
+} 
+@media screen and (max-width: 75rem) {
+    body {
+        font-size: 2rem;
+    }
+    .images img {
+        height: 35rem;
+    }
+    .nav{
+        flex-direction: column-reverse;
+    }
+    .text{
+        margin-top: 0;
+        height: 2.30rem;
+    }
+    #input2:checked ~ .nav .text .text-container {
+        transform: translateY(-2.30rem);
+    }
+    #input3:checked ~ .nav .text .text-container {
+        transform: translateY(-4.60rem);
+    }
+    #input4:checked ~ .nav .text .text-container {
+        transform: translateY(-6.90rem);
+    }
+}
+@media screen and (max-width: 48rem) {
+    body {
+        font-size: 1.5rem;
+    }
+    .images img {
+        height: 25rem;
+    }
+    .text{
+        height: 1.75rem;
+    }
+    .controls{
+        margin: 1rem 0;
+        column-gap: 0;
+    }
+    .input-zone{
+        height: 2rem;
+        width: 2rem;
+    }
+    .input-zone label {
+        height: 1rem;
+        width: 1rem;
+        
+    }
+    .input-zone label:hover {
+        border: solid seagreen 0.25rem;
+    }
+    #input2:checked ~ .nav .text .text-container {
+        transform: translateY(-1.75rem);
+    }
+    #input3:checked ~ .nav .text .text-container {
+        transform: translateY(-3.5rem);
+    }
+    #input4:checked ~ .nav .text .text-container {
+        transform: translateY(-5.25rem);
+    }
+}
+@media screen and (max-width: 25rem) {
+    footer{
+        height: 10vw;
+    }
+    body {
+        height: 130vh;
+        font-size: 1rem;
+    }
+    .images img {
+        height: 17rem;
+    }
+    .meme-slider{
+        width: 80%;
+    }
+    .text{
+        height: 1.2rem;
+    }
+    #input2:checked ~ .nav .text .text-container {
+        transform: translateY(-1.2rem);
+    }
+    #input3:checked ~ .nav .text .text-container {
+        transform: translateY(-2.4rem);
+    }
+    #input4:checked ~ .nav .text .text-container {
+        transform: translateY(-3.6rem);
+    }
+}
